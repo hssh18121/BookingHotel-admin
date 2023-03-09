@@ -9,6 +9,15 @@ import EditHotel from "./EditHotel";
 import CreateHotel from "./CreateHotel";
 export const Rooms = () => {
   const [backendHotelData, setBackendHotelData] = useState([{}]);
+  const [backendRoomData, setBackendRoomData] = useState([{}]);
+  useEffect(() => {
+    fetch("api/room/all")
+      .then((response) => response.json())
+      .then((data) => {
+        setBackendRoomData(data);
+      });
+  }, []);
+
   useEffect(() => {
     fetch("api/hotel/all")
       .then((response) => response.json())
@@ -71,6 +80,55 @@ export const Rooms = () => {
                 gridTemplateColumns: "repeat(1, minmax(200px, 700px))",
               }}
             >
+              {backendHotelData.data?.hotels.map((el) => (
+                <div className="mt-5">
+                  <h3 className="font-weight-bold mb-5">
+                    el.name: Rooms Available
+                  </h3>
+
+                  <CDBTable responsive className="hotel-table">
+                    <CDBTableHeader color="light">
+                      <tr>
+                        <th>Hotel Image</th>
+                        <th>Hotel Name</th>
+                        <th>Province</th>
+                        <th className="address-description">Address</th>
+                        <th>Edit</th>
+                      </tr>
+                    </CDBTableHeader>
+                    <CDBTableBody>
+                      {backendHotelData.data?.hotels.map((el) => (
+                        <tr>
+                          <td>
+                            <img
+                              className="hotel-image"
+                              src={el.image}
+                              alt="Hotel"
+                            />
+                          </td>
+                          <td>
+                            <div>{el.name}</div>
+                          </td>
+                          <td>
+                            <div>{el.province}</div>
+                          </td>
+                          <td>
+                            <div>{el.address}</div>
+                          </td>
+                          <td>
+                            <div
+                              className="edit-icon"
+                              onClick={() => openModalHandler(el._id)}
+                            >
+                              <FaEdit />
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </CDBTableBody>
+                  </CDBTable>
+                </div>
+              ))}
               <div className="mt-5">
                 <h3 className="font-weight-bold mb-5">
                   Available Hotels In The System
