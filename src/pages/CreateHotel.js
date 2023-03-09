@@ -74,7 +74,7 @@ const CreateHotel = (props) => {
         "Content-Type": "application/json",
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU1OWRiYTE2MmYwMGEzM2VmNzI4OSIsImlhdCI6MTY3ODMyNjQ5MiwiZXhwIjoxNjc4MzMwMDkyfQ.GiugQqJ-zQBxxjrX66h6LqGnfryMXYanDpe0cui93xw`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUxZmEwNTcwYjg5NDBhZjI1NWU3OSIsImlhdCI6MTY3ODMzNjQ2MSwiZXhwIjoxNjc4MzcyNDYxfQ.NIyKDkw93m4w_4O85pjocrr_fzToLpngWf1thcZspvM`,
       },
 
       body: JSON.stringify({
@@ -97,6 +97,8 @@ const CreateHotel = (props) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
+          alert("Create hotel successfully");
+          window.location.reload();
           console.log(data);
         } else {
           console.log(data.message);

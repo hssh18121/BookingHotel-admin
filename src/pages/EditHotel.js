@@ -105,7 +105,7 @@ const EditHotel = (props) => {
         "Content-Type": "application/json",
         Accept: "application/json",
 
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUxZmEwNTcwYjg5NDBhZjI1NWU3OSIsImlhdCI6MTY3ODMxNTIwOCwiZXhwIjoxNjc4MzMzMjA4fQ.x_UsLwX4RvFbqQw2xJjKXEgD1tmr_bZY5LdbI4lnDso`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUxZmEwNTcwYjg5NDBhZjI1NWU3OSIsImlhdCI6MTY3ODMzNjQ2MSwiZXhwIjoxNjc4MzcyNDYxfQ.NIyKDkw93m4w_4O85pjocrr_fzToLpngWf1thcZspvM`,
       },
 
       body: JSON.stringify({
@@ -123,6 +123,8 @@ const EditHotel = (props) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
+          alert("Edit hotel successfully");
+          window.location.reload();
           console.log(data);
         } else {
           console.log(data.message);
@@ -138,12 +140,14 @@ const EditHotel = (props) => {
         "Content-Type": "application/json",
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU1OWRiYTE2MmYwMGEzM2VmNzI4OSIsImlhdCI6MTY3ODI5ODMzNCwiZXhwIjoxNjc4MzAxOTM0fQ.nJbJthVOcgmfrTBF4WBFmcWrf1mLFNP4jLz0z-62BJc`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGUxZmEwNTcwYjg5NDBhZjI1NWU3OSIsImlhdCI6MTY3ODMzNjQ2MSwiZXhwIjoxNjc4MzcyNDYxfQ.NIyKDkw93m4w_4O85pjocrr_fzToLpngWf1thcZspvM`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
+          alert("Delete hotel successfully");
+          window.location.reload();
           console.log(data);
         } else {
           console.log(data.message);
