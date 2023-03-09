@@ -1,0 +1,28 @@
+.hotel-image {
+  width: 9rem;
+  height: 6rem;
+}
+
+th {
+  text-align: left;
+}
+
+.hotel-table {
+  width: 70rem;
+}
+
+.address-description {
+  width: 30%;
+}
+
+.edit-icon {
+  cursor: pointer;
+}
+
+.create-new-hotel-link {
+  cursor: pointer;
+}
+
+.create-new-hotel-link:hover {
+  text-decoration: underline;
+}

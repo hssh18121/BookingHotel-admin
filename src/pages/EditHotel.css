@@ -1,0 +1,79 @@
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 5rem;
+  color: #444;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+
+.modal {
+  /* position: absolute;
+        top: 80%;
+        left: 50%;
+        height: 50%; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 80%;
+  min-height: 50%;
+  /* transform: translate(-50%, -50%); */
+  max-width: 40%;
+  display: inline-block;
+  background-color: white;
+
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  overflow-y: scroll;
+  color: #343a40;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+#hotel-description-text-area {
+  height: 15rem;
+}
+
+.hotel-info-form {
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+.img-library {
+  width: 9.4rem;
+  height: 6rem;
+}
+
+.main-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-hotel-img {
+  display: block;
+  width: 34rem;
+}
+
+.edit-hotel-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
